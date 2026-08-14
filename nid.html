@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nepal in Data — Research, Evidence &amp; Communication</title>
+<meta name="description" content="Nepal in Data is Nepal's data and statistics portal — research, surveys, training and data visualisation for evidence-based development.">
+<link rel="icon" type="image/png" href="new-logo.png">
+<link rel="apple-touch-icon" href="new-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1D4389;
+    --navy-deep:#142E5F;
+    --gray:#D0D0D2;
+    --crimson:#DC1D3E;
+    --ink:#34373B;
+    --paper:#FBFAF8;
+    --panel:#F1EFEA;
+    --line:#E2DFD8;
+    --max:1180px;
+    --serif-display:'Space Grotesk', sans-serif;
+    --sans-body:'Libre Franklin', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--sans-body);
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,250,248,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; text-decoration:none;}
+  .brand-logo{height:54px; width:auto; display:block;}
+  nav.links{display:flex; align-items:center; gap:34px;}
+  nav.links a{
+    font-size:14.5px; font-weight:600; text-decoration:none; color:var(--ink);
+    letter-spacing:.01em;
+    position:relative;
+  }
+  nav.links a:not(.cta)::after{
+    content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+    background:var(--crimson); transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  nav.links a:not(.cta):hover::after{transform:scaleX(1);}
+  .menu-btn{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .menu-btn span{display:block; width:22px; height:2px; background:var(--ink); margin:5px 0;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative; overflow:hidden;
+    padding:clamp(56px, 10vw, 92px) 0 clamp(52px, 9vw, 80px);
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(120% 120% at 88% -10%, rgba(29,67,137,.06), transparent 55%),
+      var(--paper);
+  }
+  .hero-grid{
+    display:block;
+  }
+  .hero-copy{max-width:760px; margin:0 auto; text-align:center;}
+
+  /* ===== Hero signature: seven-decades data stack ===== */
+  .stack{position:relative; width:100%; display:flex; justify-content:center;}
+  .stack svg{width:min(100%, 380px); height:auto; overflow:visible;}
+  .drum{
+    transform-box:fill-box; transform-origin:center;
+    opacity:0; transform:translateY(18px) scale(.98);
+    animation:drumIn .6s cubic-bezier(.2,.7,.25,1) forwards;
+    animation-delay:calc(.25s + var(--i) * .09s);
+  }
+  @keyframes drumIn{to{opacity:1; transform:translateY(0) scale(1);}}
+  .axis-line{stroke:var(--line); stroke-width:1.5; stroke-dasharray:2 5;}
+  .yr{font-family:var(--mono); font-size:12px; fill:#8a8f96; letter-spacing:.06em;}
+  .yr-strong{fill:var(--navy-deep); font-weight:500;}
+  .stack-caption{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+    color:#8a8f96; text-align:center; margin:18px 0 0;
+  }
+  .stack-caption b{color:var(--crimson); font-weight:500;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--crimson); font-weight:500; margin:0 0 18px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:2px; background:var(--crimson); display:inline-block;}
+  h1{
+    font-family:var(--serif-display); font-weight:700;
+    font-size:clamp(34px, 4.6vw, 54px); line-height:1.08; letter-spacing:-0.01em;
+    margin:0 0 22px; color:var(--navy-deep);
+  }
+  h1 em{font-style:normal; color:var(--crimson);}
+  .hero p.lead{
+    font-size:17.5px; color:#52555a; max-width:600px; margin:0 auto 30px;
+  }
+  .hero-cta{display:flex; gap:14px; flex-wrap:wrap; justify-content:center;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 22px; border-radius:3px; font-weight:600; font-size:14.5px;
+    text-decoration:none; border:1.5px solid transparent; transition:all .2s ease;
+  }
+  .btn-primary{background:var(--navy); color:#fff;}
+  .btn-primary:hover{background:var(--navy-deep);}
+
+  /* divider strip echoing logo bands */
+  .stripe{height:6px; display:flex;}
+  .stripe span{flex:1;}
+  .stripe .s1{background:var(--navy);}
+  .stripe .s2{background:var(--gray);}
+  .stripe .s3{background:var(--crimson);}
+
+  /* ===== Section shells ===== */
+  section{padding:clamp(48px, 9vw, 74px) 0;}
+  .section-head{max-width:640px; margin:0 0 44px;}
+  .kicker{
+    font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--navy); font-weight:500; margin:0 0 10px;
+  }
+  h2{
+    font-family:var(--serif-display); font-weight:700; font-size:clamp(26px,3vw,36px);
+    color:var(--navy-deep); margin:0 0 14px; letter-spacing:-0.01em;
+  }
+  .section-head p{color:#5a5d62; font-size:15.5px; margin:0;}
+
+  /* ===== About ===== */
+  .about{background:var(--panel); border-bottom:1px solid var(--line);}
+  .about-copy{max-width:760px;}
+  .about p{font-size:15.8px; color:#43474c; margin:0 0 16px;}
+
+  /* ===== Services ===== */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .service{
+    background:var(--paper); padding:30px 22px; position:relative;
+    transition:background .2s ease;
+  }
+  .service:hover{background:#fff;}
+  .service:hover .num{color:var(--crimson);}
+  .service .num{
+    font-family:var(--mono); font-size:13px; color:#aeb2b8; display:block; margin-bottom:22px;
+    transition:color .2s ease;
+  }
+  .service h3{
+    font-family:var(--serif-display); font-size:16.5px; font-weight:600; color:var(--navy-deep);
+    margin:0 0 10px; line-height:1.3;
+  }
+  .service p{font-size:13.5px; color:#62656a; margin:0; line-height:1.55;}
+  .service .mark{
+    position:absolute; top:26px; right:22px; width:9px; height:9px; border-radius:50%;
+    background:var(--gray);
+  }
+  .service:nth-child(1) .mark{background:var(--navy);}
+  .service:nth-child(5) .mark{background:var(--crimson);}
+
+  /* ===== Contact ===== */
+  .contact{background:var(--navy-deep); color:#EDEFF4;}
+  .contact .kicker{color:#8FA3D6;}
+  .contact h2{color:#fff;}
+  .contact .section-head p{color:#B9C2DA;}
+  .contact-list{
+    list-style:none; margin:0; padding:0;
+    display:grid; grid-template-columns:repeat(2,1fr); gap:32px 48px;
+  }
+  .contact-list li{display:flex; gap:16px; align-items:flex-start;}
+  .icon{
+    flex:0 0 auto; width:38px; height:38px; border-radius:50%;
+    border:1.5px solid rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center;
+  }
+  .icon svg{width:17px; height:17px; stroke:#fff; fill:none;}
+  .c-label{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:#8FA3D6; margin:0 0 4px;}
+  .c-value{font-size:15.5px; color:#fff; margin:0; overflow-wrap:break-word;}
+  .c-value a{text-decoration:none; border-bottom:1px solid rgba(255,255,255,.25);}
+  .c-value a:hover{border-color:var(--crimson); color:var(--crimson);}
+  .c-value.sub{font-size:13.5px; margin-top:5px;}
+  .c-value.sub a{border-bottom:1px solid rgba(255,255,255,.18);}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy-deep); border-top:1px solid rgba(255,255,255,.12); padding:26px 0;}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  .foot-row p{font-size:12.5px; color:#8FA3D6; margin:0;}
+  .foot-tag{font-family:var(--mono); font-size:11.5px; color:#6E83BB; letter-spacing:.08em;}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1080px){
+    .services-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (max-width: 920px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-list{gap:28px 36px;}
+    .hero-copy{max-width:none;}
+  }
+  @media (max-width: 768px){
+    .wrap{padding:0 24px;}
+    .nav{padding:12px 24px;}
+  }
+  @media (max-width: 640px){
+    nav.links{
+      position:fixed; top:var(--header-h, 66px); left:0; right:0;
+      background:var(--paper); flex-direction:column; align-items:flex-start;
+      padding:18px 24px; gap:4px; border-bottom:1px solid var(--line);
+      box-shadow:0 14px 26px rgba(20,46,95,.08);
+      max-height:calc(100vh - var(--header-h, 66px)); overflow-y:auto;
+      transform:translateY(-130%); transition:transform .28s ease;
+    }
+    nav.links.nav-active{transform:translateY(0);}
+    nav.links a{font-size:16px; width:100%; padding:12px 0;}
+    nav.links a:not(.cta)::after{display:none;}
+    .menu-btn{display:block;}
+    .brand-logo{height:44px;}
+    .contact-list{grid-template-columns:1fr; gap:26px;}
+    .foot-row{flex-direction:column; align-items:flex-start; gap:8px;}
+  }
+  @media (max-width: 520px){
+    .wrap{padding:0 18px;}
+    .nav{padding:12px 18px;}
+    .services-grid{grid-template-columns:1fr;}
+    .service{padding:24px 20px;}
+    .hero-cta{flex-direction:column; align-items:stretch;}
+    .hero-cta .btn{justify-content:center;}
+    .contact-list li{gap:14px;}
+  }
+  @media (max-width: 380px){
+    .wrap{padding:0 15px;}
+    .nav{padding:10px 15px;}
+    .brand-logo{height:40px;}
+    h1{font-size:27px;}
+    .hero p.lead{font-size:16px;}
+    .section-head{margin-bottom:30px;}
+  }
+  @media (min-width: 1440px){ :root{--max:1240px;} }
+  @media (min-width: 1800px){ :root{--max:1320px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand" aria-label="Nepal in Data — home"><img class="brand-logo" src="new-logo.png" alt="Nepal in Data" width="1000" height="211"></a>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Research, Evidence &amp; Communication</p>
+        <h1>A gateway to understand Nepal, <em>told through seven decades of data.</em></h1>
+        <p class="lead">Thousands of archived documents and time-series records, traced back to the 1950s — when Nepal first stepped onto the world stage and took its earliest steps toward democracy. Nepal in Data turns that history into evidence researchers, planners and citizens can put to work today.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-copy reveal">
+        <p class="kicker">About Nepal in Data</p>
+        <h2>Nepal's first independent, not-for-profit epistemic centre</h2>
+        <p>Nepal in Data is Nepal's first publicly accessible data and statistics portal, built by a not-for-profit organisation, bringing together development data spanning from 1950 to the present under one digital roof. Founded in 2017 as an initiative of Bikas Udhyami, a Kathmandu-based social business, Nepal in Data was created to close a long-standing gap: researchers, students, journalists, planners and policymakers across Nepal often had no single, reliable place to find, compare and use credible statistics about the country's development.</p>
+        <p>Today the portal hosts datasets across the sectors that shape everyday life, including agriculture, the economy, health, education, governance, infrastructure and the environment, alongside maps, infographics, government reports and academic publications drawn from both official and independent sources. Beyond hosting numbers, Nepal in Data works directly with government bodies, civil society organisations, academic institutions and development partners to design surveys, conduct policy research and strengthen local data systems, including those at the provincial and municipal level, where Nepal's federal structure has made reliable data more important than ever. Every dataset, study and visualisation we publish is guided by one simple belief: better evidence leads to better decisions for Nepal's people, and that conviction is exactly what sits behind our daily work of research, evidence and communication.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">What We Do</p>
+        <h2>Five services, one purpose: better evidence</h2>
+        <p>From raw datasets to finished policy briefs, our work spans the full life of a piece of evidence — collected, investigated, taught, visualised and archived for the long run.</p>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service">
+          <span class="num">01</span>
+          <span class="mark"></span>
+          <h3>Data Management</h3>
+          <p>Collecting, cleaning, standardising and archiving development data and documents so it stays accurate, accessible and easy to retrieve over time.</p>
+        </div>
+        <div class="service">
+          <span class="num">02</span>
+          <span class="mark"></span>
+          <h3>Research &amp; Survey</h3>
+          <p>Designing and running surveys, field research and policy analysis on Nepal's economic, social and political issues to inform decision-makers.</p>
+        </div>
+        <div class="service">
+          <span class="num">03</span>
+          <span class="mark"></span>
+          <h3>Training &amp; Capacity Building</h3>
+          <p>Workshops and tailored training in data literacy, research methods and knowledge management for students, professionals and institutions.</p>
+        </div>
+        <div class="service">
+          <span class="num">04</span>
+          <span class="mark"></span>
+          <h3>Data Visualisation</h3>
+          <p>Turning dense statistics into clear charts, infographics and interactive visuals that communicate findings at a glance.</p>
+        </div>
+        <div class="service">
+          <span class="num">05</span>
+          <span class="mark"></span>
+          <h3>Document Archive</h3>
+          <p>Digitising and safeguarding thousands of government reports, studies, photographs and historical records so Nepal's institutional memory stays accessible for generations to come.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Get In Touch</p>
+        <h2>Talk to the Nepal in Data team</h2>
+        <p>Have a research partnership, a dataset request or a training need? Reach us directly — we're based in Kathmandu and happy to help.</p>
+      </div>
+      <ul class="contact-list reveal">
+        <li>
+          <span class="icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div>
+            <p class="c-label">Office</p>
+            <p class="c-value">Kathmandu, Bagmati Province, Nepal</p>
+          </div>
+        </li>
+        <li>
+          <span class="icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.95.36 1.89.68 2.79a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.32 1.84.55 2.79.68A2 2 0 0122 16.92z"/></svg></span>
+          <div>
+            <p class="c-label">Phone</p>
+            <p class="c-value"><a href="tel:+97714542014">+977&nbsp;1&#8209;4542014</a> &nbsp;/&nbsp; <a href="tel:+9779841677288">+977&nbsp;984&#8209;1677288</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></span>
+          <div>
+            <p class="c-label">Email</p>
+            <p class="c-value"><a href="mailto:nepalindata@bikasudhyami.com">nepalindata@bikasudhyami.com</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+          <div>
+            <p class="c-label">CEO</p>
+            <p class="c-value">Mr. Santosh Gartaula</p>
+            <p class="c-value sub"><a href="mailto:sgartaula@bikasudhyami.com">sgartaula@bikasudhyami.com</a></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <p>&copy; <span id="year"></span> Nepal in Data &middot; an initiative of Bikas Udhyami</p>
+    <p class="foot-tag">RESEARCH &nbsp;&middot;&nbsp; EVIDENCE &nbsp;&middot;&nbsp; COMMUNICATION</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var header = document.querySelector('header');
+  var menuBtn = document.getElementById('menuBtn');
+  var navLinks = document.getElementById('navLinks');
+
+  // keep mobile dropdown aligned to actual header height on any device
+  function syncHeaderHeight(){
+    document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  }
+  syncHeaderHeight();
+  window.addEventListener('resize', syncHeaderHeight);
+  window.addEventListener('orientationchange', syncHeaderHeight);
+
+  menuBtn.addEventListener('click', function(){
+    navLinks.classList.toggle('nav-active');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ navLinks.classList.remove('nav-active'); });
+  });
+  // close menu when resizing back to desktop
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 640){ navLinks.classList.remove('nav-active'); }
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('in'); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+</script>
+
+</body>
+</html>

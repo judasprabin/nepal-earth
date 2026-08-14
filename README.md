@@ -6,9 +6,12 @@ This repository is the *strategy layer* for the **Nepal Earth** product idea —
 evidence-based analysis of the idea's market, feasibility, and defensibility, written from
 four seats: product strategist, startup analyst, market researcher, and technical architect.
 
-> **Verdict (one line): `Portfolio Only`** — build it as a production-grade geospatial data
-> platform and portfolio centerpiece, not as a startup. The blueprint is an excellent
-> *engineering* document and a weak *business* document.
+> **Verdict (one line): `Build` (round 1) → `Validate First` (before commercial round 2).**
+> The idea has evolved from "geospatial intelligence" into a sharper product: a **district-level
+> atlas (demographics + biodiversity + tourism)** with an **agentic explainer panel**, free in
+> round 1, commercial later. That refinement gives it a real — if niche — business tail.
+>
+> *Earlier verdict (for the original blueprint):* `Portfolio Only` — see doc 01.
 
 ---
 
@@ -36,22 +39,25 @@ evidence, and answers the two questions the blueprint left open:
 | [`docs/03-competitor-teardown.md`](docs/03-competitor-teardown.md) | Competitor-by-competitor analysis with researched pricing and the free-substitute problem. |
 | [`docs/04-suggestions-and-roadmap.md`](docs/04-suggestions-and-roadmap.md) | Concrete improvement suggestions: product, positioning, technical, and a phased roadmap. |
 | [`docs/05-validation-plan.md`](docs/05-validation-plan.md) | The cheapest way to validate — or kill — the idea before writing more code. |
+| [`docs/06-refined-vision.md`](docs/06-refined-vision.md) | **The refined idea** — district-level tourism + demographics + biodiversity atlas with an agentic explainer. Critical analysis, prospective, and multi-technical-mind spec. |
 
 ---
 
 ## Scorecard (out of 10)
 
-| Dimension | Score |
-|---|---|
-| Market potential | **3** |
-| Business feasibility | **2** |
-| Technical feasibility | **8** |
-| Competitive position | **2** |
-| Portfolio value | **9** |
+*Doc 01 (original blueprint) → Doc 06 (refined vision):*
 
-**Verdict: `Portfolio Only`**
+| Dimension | Original | Refined |
+|---|---|---|
+| Market potential | 3 | **5** |
+| Business feasibility | 2 | **4** |
+| Technical feasibility | 8 | 8 |
+| Competitive position | 2 | **4** |
+| Portfolio value | 9 | 9 |
 
-The one defensible business wedge — a *validated* landslide/flood exposure risk product for
-Nepal's disaster-prone landscape — is a different product that needs its own
-`Validate First` cycle (see `docs/02-moat-and-defensibility.md` §5 and
-`docs/05-validation-plan.md` §4).
+**Verdict: `Build` (round 1) → `Validate First` (before commercial round 2).**
+
+The one defensible business wedge is the **tourism-promotion / discovery attention** play
+(guesthouses, trekking agencies, municipalities paying for visibility), powered by the
+**agentic explainer** as the differentiator. Validate it with 5–10 business interviews before
+building any monetization.
