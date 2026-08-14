@@ -40,6 +40,7 @@ evidence, and answers the two questions the blueprint left open:
 | [`docs/04-suggestions-and-roadmap.md`](docs/04-suggestions-and-roadmap.md) | Concrete improvement suggestions: product, positioning, technical, and a phased roadmap. |
 | [`docs/05-validation-plan.md`](docs/05-validation-plan.md) | The cheapest way to validate — or kill — the idea before writing more code. |
 | [`docs/06-refined-vision.md`](docs/06-refined-vision.md) | **The refined idea** — district-level tourism + demographics + biodiversity atlas with an agentic explainer. Critical analysis, prospective, and multi-technical-mind spec. |
+| [`docs/07-app-ideas.md`](docs/07-app-ideas.md) | **5 concrete app ideas** with clear build paths — Trek Copilot, District Showcase, Diaspora Explorer, Wildlife Atlas, full Nepal Earth. |
 
 ---
 
