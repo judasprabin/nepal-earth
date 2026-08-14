@@ -42,6 +42,7 @@ evidence, and answers the two questions the blueprint left open:
 | [`docs/06-refined-vision.md`](docs/06-refined-vision.md) | **The refined idea** — district-level tourism + demographics + biodiversity atlas with an agentic explainer. Critical analysis, prospective, and multi-technical-mind spec. |
 | [`docs/07-app-ideas.md`](docs/07-app-ideas.md) | **5 concrete app ideas** with clear build paths — Trek Copilot, District Showcase, Diaspora Explorer, Wildlife Atlas, full Nepal Earth. |
 | [`docs/09-startup-vision.md`](docs/09-startup-vision.md) | **Critical analysis of doc 08 + the bigger-vision startup** — destination-intelligence platform, portfolio-first, ML built in. |
+| [`docs/09b-solo-refined.md`](docs/09b-solo-refined.md) | **Critical review of doc 09 + refined solo-startup plan** |
 
 ---
 
