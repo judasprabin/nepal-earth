@@ -43,6 +43,9 @@ evidence, and answers the two questions the blueprint left open:
 | [`docs/07-app-ideas.md`](docs/07-app-ideas.md) | **5 concrete app ideas** with clear build paths — Trek Copilot, District Showcase, Diaspora Explorer, Wildlife Atlas, full Nepal Earth. |
 | [`docs/09-startup-vision.md`](docs/09-startup-vision.md) | **Critical analysis of doc 08 + the bigger-vision startup** — destination-intelligence platform, portfolio-first, ML built in. |
 | [`docs/09b-solo-refined.md`](docs/09b-solo-refined.md) | **Critical review of doc 09 + refined solo-startup plan** |
+| [`docs/10-grok-refined.md`](docs/10-grok-refined.md) | **"Find Your Trek" PRD** — Grok-refined product spec for the Annapurna trek-discovery wedge. |
+| [`docs/11-map-stack-tutorial.md`](docs/11-map-stack-tutorial.md) | **Hands-on map-stack tutorial** — 7-layer progressive guide (GDAL → PostGIS → tippecanoe/PMTiles → titiler/COG → MapLibre → FastAPI → React). |
+| [`docs/12-technical-architecture.md`](docs/12-technical-architecture.md) | **Technical architecture research** — verified data sources, stack decisions, build-vs-buy, cost model ($15–130/mo), phased build plan. |
 
 ---
 

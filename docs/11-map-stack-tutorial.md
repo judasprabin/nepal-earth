@@ -1,7 +1,7 @@
 # Nepal Earth — Map Stack Tutorial
 
 A hands-on, learn-by-building guide to the geospatial stack behind the Nepal Earth map
-platform. This is the companion to `docs/10-technical-architecture.md` — that doc says
+platform. This is the companion to `docs/12-technical-architecture.md` — that doc says
 *what* to build and *why*; this one teaches you *how*, from zero.
 
 **Who this is for:** a strong backend/ML engineer who is new to GIS and web maps. You already
@@ -561,7 +561,7 @@ never a half-finished monolith.
 - **AWS Terrain Tiles** — `registry.opendata.aws/terrain-tiles/`
 
 When you're ready to go from "learned it" to "built it for real," the phased sequence in
-`docs/10-technical-architecture.md` §12 is the checklist.
+`docs/12-technical-architecture.md` §12 is the checklist.
 
 ---
 
